@@ -13,16 +13,17 @@
     *ngFor="let m of markers; let i = index"
     [latitude]="m.lat"
     [longitude]="m.lng"
+    [label]="m.label"
     >
 
     <agm-info-window>
+      <strong>id:{{m.id}}</strong>
       <strong>緯度・経度</strong>
-      <input class='form-class' type='text' [(ngModel)]="m.lat">
-      <input class='form-class' type='text' [(ngModel)]="m.lng">
-      <button class='btn btn-info' (click)='saveMarker(m.id)'>clickしてね</button>
-      <button class='btn btn-info' (click)='deleteMarker(m.id)'>削除してね</button>
+      <input class='form-control' type='text' [(ngModel)]="m.lat">
+      <input class='form-control' type='text' [(ngModel)]="m.lng">
+      <button class='btn btn-info' (click)='saveMarker(m.id)'>登録</button>
+      <button class='btn btn-default' (click)='deleteMarker(m.id)'>削除</button>
     </agm-info-window>
-
 
   </agm-marker>
 
